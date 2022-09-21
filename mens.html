@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/0c167b58fa.js" crossorigin="anonymous"></script>
+    <style>
+        #container{
+            width: 90%;
+            margin: auto;
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+
+        }
+        .box{
+            width: 35%;
+            margin: auto;
+
+        }
+        img{
+            height: 400px;
+            width: 70%;
+            margin-left: 50px;
+        }
+        p{
+            font-size: 30px;
+            color: grey;
+        }
+        p+p{
+            color: black;
+            font-weight: bolder;
+        }
+        h2{
+            font-size: 30px;
+        }
+        .cut_price{
+            text-decoration: line-through;
+            color: grey;
+            
+        }
+        .discount{
+            color:#0dac62 ;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="box">
+          <img src="https://assetscdn1.paytm.com/images/catalog/product/A/AP/APPPAUSE-BLACK-PAUS57747861200F37/1562877340930_1..jpg?imwidth=320&impolicy=hq" alt="">
+          <h2>Pause</h2>
+          <p>Men Black Solid Shrug</p>
+          <p><i class="fa-solid fa-indian-rupee-sign"></i>359 <span class="cut_price">MRP <i class="fa-solid fa-indian-rupee-sign cut_price"></i> 1499</span> <span class="discount">-76%</span></p>
+        </div>
+        <div class="box">
+            <img src="https://assetscdn1.paytm.com/images/catalog/product/A/AP/APPJUBINATION-SJERS295568BD3913AD/1562955990957_0..jpg?imwidth=320&impolicy=hq" alt="">
+          <h2>Jubination</h2>
+          <p>Sweaters & pullovers Grey Wool</p>
+          <p><i class="fa-solid fa-indian-rupee-sign"></i>799 <span class="cut_price">MRP <i class="fa-solid fa-indian-rupee-sign cut_price" ></i> 1499</span> <span class="discount">-47%</span></p>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
