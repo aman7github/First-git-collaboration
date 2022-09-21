@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+div{
+        background-color:blueviolet;
+        width: 100%;
+        height: 700px;
+      padding-top: 70px;
+    }
+    form{
+        margin: auto;
+        padding: 30px;
+        background-color: white;
+       
+        width: 20%;
+        height: auto;
+    
+        border-radius: 10px;
+        
+    }
+    form>h1{
+        font-size: 80px;
+    }
+    form>input{
+        width: 100%;
+    }
+    #submit{
+        background-color: blueviolet;
+        color: white;
+        padding: 20px;
+        border: 0px;
+        border-radius: 5px;
+
+    }
+   
+    form>p{
+        text-align: center;
+    }
+    </style>
+    
+</head>
+<body>
+    <div>
+        <form>
+            <h1>Login</h1>
+            <input id="email" type="email" placeholder="Email"><br><br>
+            <input id="pass" type="password" placeholder="password"><br><br>
+            <input id="submit" type="submit" placeholder="Login"><br>
+            <p>Forgot <a href="" target="_blank">Password?</a></p>
+            <p>Don't have account? > <a href="" target="_blank">Sing Up</a></p>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    document.querySelector("submit").innertext="Login"
+   document.querySelector("form").addEventListener("submit",sub);
+   function sub(event){
+       event.preventDefault();
+      
+       let email=document.querySelector("#email").value;
+       localStorage.setItem("email",email);
+       let password=document.querySelector("#pass").value;
+       localStorage.setItem("pass",password);
+
+       if(email===""||password===""){
+           alert("please fill the recured input")
+       }
+       document.querySelector("#email").value="";
+       document.querySelector("#pass").value="";
+   }
+</script>
