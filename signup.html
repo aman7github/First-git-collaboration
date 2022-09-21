@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign-up</title>
+    <style>
+        *{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        img{
+            width: 90%;
+        }
+        body>div:nth-child(1){
+            border: 0px solid red;
+            width: 10%;
+            margin: auto;
+        }
+        input{
+            width: 95%;
+            height: 30px;
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        body>div:nth-child(2){
+            border: 0px solid black;
+            border-radius: 10px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            width: 30%;
+            margin: auto;
+            padding: 10px;
+        }
+#form1{
+    border: 0px solid red;
+    padding: 5px;
+    width: 95%;
+    margin: auto;
+    margin-top: 10px;
+}
+#form1>form>label{
+    margin-bottom: 10px;
+}
+p{
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #B88890;
+}
+
+h2{
+    border: 0px solid blue;
+    width: 25%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin:auto;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    
+    
+}
+#submit{
+    width: 99%;
+    height: 45px;
+    padding: 6px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    cursor: pointer;
+    background-color: #2563EB;
+    color: white;
+    font-weight: bolder;
+}
+#checkbox{
+    width: 5%;
+}
+    </style>
+</head>
+<body>
+    <div>
+        <img src="https://pbs.twimg.com/profile_images/1516396239956623370/E4COoQHn_400x400.jpg">
+    </div>
+    <div>
+        <h2>Sign Up</h2>
+        <div id="form1">
+            <form>
+                <label>Full Name</label><br /><br>
+                <input id="name" type="text" placeholder="Enter Full Name" /><br />
+                <label for="">Email</label><br /><br>
+                <input
+                  id="emailID"
+                  type="text"
+                  
+                  placeholder="Enter Email ID"
+                /><br />
+               
+                <label>Password </label><br /><br>
+                <input id="pass" type="password" placeholder="Enter Password" /><br>
+                <input type="checkbox" id="checkbox" onclick="myFunction()"/> Show Password
+                <p>By Sign-up i accept all the terms and condition</p>
+                <input  id="submit"  type="submit"  value="SIGN UP"/>
+              </form>
+              <p>Already have an account? <a href="" target="_blank">Sign In</a></p>
+        </div>
+    </div>
+   
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit", mysignup);
+
+    function mysignup(event){
+        event.preventDefault();
+        let full_name = document.getElementById("name").value;
+        localStorage.setItem("idName",full_name);
+        let e_mail = document.getElementById("emailID").value;
+        localStorage.setItem("emailid",e_mail)
+        let passcode = document.getElementById("pass").value;
+        localStorage.setItem("password",passcode);
+        //console.log(full_name,e_mail,passcode)
+    }
+    function myFunction() {
+  var x = document.getElementById("pass");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+    
+ 
+</script>
