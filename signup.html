@@ -6,9 +6,7 @@
         *{
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
-        img{
-            width: 90%;
-        }
+        
         body>div:nth-child(1){
             border: 0px solid red;
             width: 10%;
@@ -24,10 +22,18 @@
         body>div:nth-child(2){
             border: 0px solid black;
             border-radius: 10px;
-            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
             width: 30%;
             margin: auto;
             padding: 10px;
+        }
+        #maindiv{
+            border: 0px solid red;
+            
+        }
+        body{
+            border: 0px solid red;
+            background-image: url(https://wallpapers.com/images/hd/4k-blue-minimalist-deer-5fc2dalaakntatt7-5fc2dalaakntatt7.jpg);
         }
 #form1{
     border: 0px solid red;
@@ -42,7 +48,8 @@
 p{
     text-align: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: #B88890;
+    color: blueviolet;
+    font-weight: bolder;
 }
 
 h2{
@@ -77,6 +84,7 @@ h2{
         width: 100%;
         height: 65px;
         background-color: #1d2937;
+        margin-bottom: 20px;
         border-radius: 10px;
         color: white;
         display: flex;
@@ -106,13 +114,7 @@ h2{
         </div>
     </div>
 
-
-
-   
-    <div>
-        <img src="https://pbs.twimg.com/profile_images/1516396239956623370/E4COoQHn_400x400.jpg">
-    </div>
-    <div>
+    <div id="maindiv">
         <h2>Sign Up</h2>
         <div id="form1">
             <form>
@@ -128,11 +130,11 @@ h2{
                
                 <label>Password </label><br /><br>
                 <input id="pass" type="password" placeholder="Enter Password" /><br>
-                <input type="checkbox" id="checkbox" onclick="myFunction()"/> Show Password
+                <input type="checkbox" id="checkbox" onclick="myFunction()"/><label>Show Password</label>
                 <p>By Sign-up i accept all the terms and condition</p>
                 <input  id="submit"  type="submit"  value="SIGN UP"/>
               </form>
-              <p>Already have an account? <a href="" target="_blank">Sign In</a></p>
+              <p>Already have an account? <a href="login.html" target="_blank">Sign In</a></p>
         </div>
     </div>
    
