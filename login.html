@@ -1,77 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign-in</title>
     <style>
-div{
-        background-color:blueviolet;
-        width: 100%;
-        height: 700px;
-      padding-top: 70px;
-    }
-    form{
-        margin: auto;
-        padding: 30px;
-        background-color: white;
-       
-        width: 20%;
-        height: auto;
-    
-        border-radius: 10px;
-        
-    }
-    form>h1{
-        font-size: 80px;
-    }
-    form>input{
-        width: 100%;
-    }
-    #submit{
-        background-color: blueviolet;
-        color: white;
-        padding: 20px;
-        border: 0px;
-        border-radius: 5px;
+        *{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        img{
+            width: 100%;
+        }
+        body{
+            background-image: url(https://images.hdqwalls.com/download/peaceful-blur-background-1x-1600x900.jpg);
+        }
+        body>div:nth-child(1){
+            border: 0px solid red;
+            width: 20%;
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        input{
+            width: 95%;
+            height: 30px;
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        body>div:nth-child(2){
+            border: 0px solid black;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+            width: 30%;
+            margin: auto;
+            padding: 10px;
+        }
+#form1{
+    border: 0px solid red;
+    padding: 5px;
+    width: 95%;
+    margin: auto;
+    margin-top: 10px;
+}
+#form1>form>label{
+    margin-bottom: 10px;
+}
+p{
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: black;
+    font-weight: bolder;
+}
 
-    }
-   
-    form>p{
-        text-align: center;
-    }
-    </style>
+h2{
+    border: 0px solid blue;
+    width: 25%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin:auto;
+    margin-bottom: 5px;
+    margin-top: 5px;
     
+    
+}
+#submit{
+    width: 99%;
+    height: 45px;
+    padding: 6px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    cursor: pointer;
+    background-color: #2563EB;
+    color: white;
+    font-weight: bolder;
+}
+#checkbox{
+    width:5%
+}
+
+
+    </style>
 </head>
 <body>
     <div>
-        <form>
-            <h1>Login</h1>
-            <input id="email" type="email" placeholder="Email"><br><br>
-            <input id="pass" type="password" placeholder="password"><br><br>
-            <input id="submit" type="submit" placeholder="Login"><br>
-            <p>Forgot <a href="" target="_blank">Password?</a></p>
-            <p>Don't have account? > <a href="" target="_blank">Sing Up</a></p>
-        </form>
+        <img src="">
     </div>
+    <div>
+        <h2>Sign In</h2>
+        <div id="form1">
+            <form>
+                <label for="">Email</label><br /><br>
+                <input
+                  id="emailID"
+                  type="text"
+                  
+                  placeholder="Enter Email ID"
+                /><br />
+               
+                <label>Password </label><br /><br>
+                <input id="pass" type="password" placeholder="Enter Password" /><br />
+                <input type="checkbox" id="checkbox" onclick="myFunction()"/><label>Show Password</label>
+                <input  id="submit"  type="submit"  value="SIGN IN"/>
+              </form>
+              <p>Don't have an account? <a href="signup.html" target="_blank">Sign Up</a></p>
+        </div>
+    </div>
+   
 </body>
 </html>
 <script>
-    document.querySelector("submit").innertext="Login"
-   document.querySelector("form").addEventListener("submit",sub);
-   function sub(event){
-       event.preventDefault();
-      
-       let email=document.querySelector("#email").value;
-       localStorage.setItem("email",email);
-       let password=document.querySelector("#pass").value;
-       localStorage.setItem("pass",password);
+    document.querySelector("form").addEventListener("submit", mysignup);
 
-       if(email===""||password===""){
-           alert("please fill the recured input")
-       }
-       document.querySelector("#email").value="";
-       document.querySelector("#pass").value="";
+function mysignup(event){
+    event.preventDefault();
+    let e_mail = document.getElementById("emailID").value;
+    let passcode = document.getElementById("pass").value;
+   if (e_mail==localStorage.getItem("emailid") && passcode==localStorage.getItem("password")){
+    alert("SIGN IN");
+   }else {
+    alert("Wrong Credential");
    }
+}
+
+function myFunction() {
+  var x = document.getElementById("pass");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
 </script>
